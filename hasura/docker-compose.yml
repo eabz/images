@@ -10,7 +10,7 @@ services:
   graphql-engine:
     image: hasura/graphql-engine:v2.38.0
     ports:
-      - "8080:8080"
+      - "${HASURA_PORT}:8080"
     restart: always
     environment:
       HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://postgres:${POSTGRES_PASSWORD}@postgres:5432/postgres
