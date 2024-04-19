@@ -2,6 +2,7 @@ services:
   postgres:
     image: postgres:15
     restart: always
+    user: root    
     volumes:
       - ./volumes/db_data:/var/lib/postgresql/data
     environment:
