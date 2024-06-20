@@ -20,9 +20,8 @@ services:
       OMDB_API_TOKEN: ${OMDB_API_TOKEN} 
 
 volumes:
-  db:
-    driver: local
+  nas:
     driver_opts:
-      type: none
-      device: /nas/images/videoteca/volumes/db_data
-      o: bind
+      type: cifs
+      device: "//10.19.0.195/edoras"
+      o: "credentials=/root/.nas_cred,rw,dir_mode=0777,file_mode=0777,vers=3.0"
