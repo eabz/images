@@ -24,4 +24,4 @@ volumes:
     driver_opts:
       type: cifs
       device: "//10.19.0.195/edoras/videoteca"
-      o: "username=samba,password=${SAMBA_PASSWORD},uid=postgres,forceuid,gid=postgres,forcegid"
+      o: "username=samba,password=${SAMBA_PASSWORD},uid=postgres,gid=postgres,file_mode=744,dir_mode=744"
