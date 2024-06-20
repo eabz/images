@@ -7,7 +7,7 @@ services:
     ports:
       - "3300:3306"
     volumes:
-      - ./volumes/db_data:/var/lib/mysql
+      - db:/var/lib/mysql
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
@@ -19,3 +19,11 @@ services:
       PMA_PORT: 3306
     ports:
       - 8081:80
+
+volumes:
+  db:
+    driver: local
+    driver_opts:
+      type: none
+      device: /nas/images/studium/volumes/db_data
+      o: bind
