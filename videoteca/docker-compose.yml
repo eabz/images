@@ -12,12 +12,12 @@ services:
     image: 0xeabz/videoteca:main
     restart: always
     ports:
-      - 3000:3000  
+      - 3000:3000
     environment:
       DB_URL: postgres://postgres:${POSTGRES_PASSWORD}@postgres:5432
-      NEXTAUTH_SECRET: ${NEXTAUTH_SECRET}   
-      NEXTAUTH_URL: ${NEXTAUTH_URL} 
-      OMDB_API_TOKEN: ${OMDB_API_TOKEN} 
+      NEXTAUTH_SECRET: ${NEXTAUTH_SECRET}
+      NEXTAUTH_URL: ${NEXTAUTH_URL}
+      OMDB_API_TOKEN: ${OMDB_API_TOKEN}
 
 volumes:
   nas:
