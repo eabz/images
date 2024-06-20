@@ -4,7 +4,7 @@ services:
     restart: always
     user: root
     volumes:
-      - nas/videoteca:/var/lib/postgresql/data
+      - nas:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
 
