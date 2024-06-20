@@ -21,7 +21,8 @@ services:
 
 volumes:
   nas:
+    driver: local
     driver_opts:
       type: cifs
       device: "//10.19.0.195/edoras"
-      o: "credentials=/root/.nas_cred,rw,dir_mode=0777,file_mode=0777,vers=3.0"
+      o: "username=XXX,password=YYY,uid=1000,gid=1000"
