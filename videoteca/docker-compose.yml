@@ -4,8 +4,10 @@ services:
     restart: always
     volumes:
       - samba:/var/lib/postgresql/data
+      - ./init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
     environment:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    entrypoint: ["/docker-entrypoint-initdb.d/init-db.sh"]
 
   videoteca:
     image: 0xeabz/videoteca:main
