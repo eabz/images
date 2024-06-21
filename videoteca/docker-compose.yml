@@ -2,7 +2,7 @@ services:
   postgres:
     image: postgres:latest
     restart: always
-    user: root
+    user: 1000:1000
     volumes:
       - samba:/var/lib/postgresql/data
     environment:
@@ -25,4 +25,4 @@ volumes:
     driver_opts:
       type: cifs
       device: "//10.19.0.195/edoras/videoteca"
-      o: "username=samba,password=${SAMBA_PASSWORD},rw,file_mode=0777,dir_mode=0777,noperm"
+      o: "username=samba,password=${SAMBA_PASSWORD},rw,file_mode=0777,dir_mode=0777,noperm,uid=1000,gid=1000"
