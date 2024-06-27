@@ -1,5 +1,6 @@
 services:
   postgres:
+    container_name: videoteca_postgres
     image: postgres:latest
     restart: always
     user: root
@@ -9,8 +10,9 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
       - 5432:5432      
-      
+
   videoteca:
+    container_name: videoteca_ui
     image: 0xeabz/videoteca:main
     restart: always
     ports:
