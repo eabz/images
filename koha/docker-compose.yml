@@ -9,9 +9,13 @@ services:
       - "3300:3306"
     volumes:
       - ./volumes/db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+        timeout: 20s
+        retries: 10
 
   koha:
-    container_name: studium_phpmyadmin
+    container_name: koha
     image: digibib/koha:latest
     restart: always
     environment:
@@ -22,4 +26,6 @@ services:
       - 6001:6001
       - 8080:8080
       - 8081:8081
-
+    depends_on:
+      db:
+        condition: service_healthy
