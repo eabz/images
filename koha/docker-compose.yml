@@ -10,7 +10,7 @@ services:
     volumes:
       - ./volumes/db_data:/var/lib/mysql
 
-  phpmyadmin:
+  koha:
     container_name: studium_phpmyadmin
     image: digibib/koha:latest
     restart: always
